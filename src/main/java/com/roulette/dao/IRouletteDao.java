@@ -14,5 +14,9 @@ public interface IRouletteDao extends JpaRepository<Roulette, Long> {
     @Modifying
 	@Query(value = "insert  into Roulettes (id ,state, create_at ) values (:id,:state,:create_at) ", nativeQuery = true)
 	public void createRoulette(@Param("id") Long id, @Param("state") String state, @Param("create_at") Date create_at);
+
+	@Modifying
+	@Query(value = "update Roulettes set state = :state where id = :id", nativeQuery = true)
+	public int changeStateRoulette(@Param("id") Long id, @Param("state") String state);
     
 }

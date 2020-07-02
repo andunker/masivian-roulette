@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class RouletteService implements IRouletteService {
+public class RouletteServiceImpl implements IRouletteService {
 
     @Autowired
     private IRouletteDao rouletteDao;
@@ -19,6 +19,18 @@ public class RouletteService implements IRouletteService {
 	public void createRoulette(Long id) {
 		Date date = new Date();
 		rouletteDao.createRoulette(id, "close", date);
+	}
+
+	@Transactional
+	@Override
+	public String openRoulette(Long id) {
+		int result = rouletteDao.changeStateRoulette(id, "open");
+		if(result == 1){
+			return "open roulette";
+		} else {
+			return "roulette does not exist";
+		}
+		
 	}
     
 }
