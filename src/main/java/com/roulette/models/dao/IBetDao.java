@@ -1,6 +1,7 @@
 package com.roulette.models.dao;
 
 import java.util.Date;
+import java.util.List;
 
 import com.roulette.models.entity.Bet;
 
@@ -18,5 +19,9 @@ public interface IBetDao extends JpaRepository<Bet, Long> {
 			@Param("round_id") Long round_id, @Param("bet_color") String bet_color,
 			@Param("bet_number") Long bet_number, @Param("bet_value") Double bet_value,
 			@Param("bet_date") Date bet_date);
+
+	@Modifying
+	@Query(value = "select * from Bets where roulette_id = :roulette_id", nativeQuery = true)
+	public List<Bet> getAllBetsByIdRoulette(@Param("roulette_id") Long roulette_id);
     
 }

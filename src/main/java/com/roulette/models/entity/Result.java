@@ -20,17 +20,17 @@ public class Result implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private Long roulette_id;
+	private Long rouletteId;
 
-	private Long result_bet_number;
+	private Long resultBetNumber;
 
-	private String result_bet_color;
+	private String resultBetColor;
 
-	private Long round_id;
+	private Long roundId;
 
 	@Column(name = "result_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date create_at;
+	private Date createAt;
 
 	public Long getId() {
 		return id;
@@ -40,44 +40,44 @@ public class Result implements Serializable {
 		this.id = id;
 	}
 
-	public Long getRoulette_id() {
-		return roulette_id;
+	public Long getRouletteId() {
+		return rouletteId;
 	}
 
-	public void setRoulette_id(Long roulette_id) {
-		this.roulette_id = roulette_id;
+	public void setRouletteId(Long rouletteId) {
+		this.rouletteId = rouletteId;
 	}
 
-	public Long getResult_bet_number() {
-		return result_bet_number;
+	public Long getResultBetNumber() {
+		return resultBetNumber;
 	}
 
-	public void setResult_bet_number(Long result_bet_number) {
-		this.result_bet_number = result_bet_number;
+	public void setResultBetNumber(Long resultBetNumber) {
+		this.resultBetNumber = resultBetNumber;
 	}
 
-	public String getResult_bet_color() {
-		return result_bet_color;
+	public String getResultBetColor() {
+		return resultBetColor;
 	}
 
-	public void setResult_bet_color(String result_bet_color) {
-		this.result_bet_color = result_bet_color;
+	public void setResultBetColor(String resultBetColor) {
+		this.resultBetColor = resultBetColor;
 	}
 
-	public Long getRound_id() {
-		return round_id;
+	public Long getRoundId() {
+		return roundId;
 	}
 
-	public void setRound_id(Long round_id) {
-		this.round_id = round_id;
+	public void setRoundId(Long roundId) {
+		this.roundId = roundId;
 	}
 
-	public Date getCreate_at() {
-		return create_at;
+	public Date getCreateAt() {
+		return createAt;
 	}
 
-	public void setCreate_at(Date create_at) {
-		this.create_at = create_at;
+	public void setCreateAt(Date createAt) {
+		this.createAt = createAt;
 	}
 
 	/**

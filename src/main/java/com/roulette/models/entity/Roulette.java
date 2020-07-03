@@ -25,7 +25,7 @@ public class Roulette implements Serializable {
 	private String state;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date create_at;
+	private Date createAt;
 
 	public Long getId() {
 		return id;
@@ -43,12 +43,12 @@ public class Roulette implements Serializable {
 		this.state = state;
 	}
 
-	public Date getCreate_at() {
-		return create_at;
+	public Date getCreateAt() {
+		return createAt;
 	}
 
-	public void setCreate_at(Date create_at) {
-		this.create_at = create_at;
+	public void setCreateAt(Date createAt) {
+		this.createAt = createAt;
 	}
 
 	/**

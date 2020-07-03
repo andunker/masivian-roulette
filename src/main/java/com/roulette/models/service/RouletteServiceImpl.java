@@ -2,9 +2,12 @@ package com.roulette.models.service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import com.roulette.models.dao.IBetDao;
+import com.roulette.models.dao.IResultDao;
 import com.roulette.models.dao.IRouletteDao;
+import com.roulette.models.entity.Bet;
 import com.roulette.models.entity.Roulette;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +22,9 @@ public class RouletteServiceImpl implements IRouletteService {
 	
 	@Autowired
 	private IBetDao betDao;
+
+	@Autowired
+	private IResultDao resultDao;
     
     @Transactional
 	@Override
@@ -54,6 +60,33 @@ public class RouletteServiceImpl implements IRouletteService {
 		} else {
 			return "Closed roulette";
 		}
+
+	}
+
+
+	@Transactional
+	@Override
+	public List<Bet> closeRoulette(Long rouletteId) {
+		rouletteDao.changeStateRoulette(rouletteId, "close");	
+
+
+		Random random = new Random(System.currentTimeMillis());		
+		Long randomNumberResult =  (long) random.nextInt(36);		
+		
+		String color = "red";
+
+
+		if(randomNumberResult % 2 == 0){
+			color = "black";
+			
+		}
+		Date resultDate = new Date();
+		
+		
+
+		resultDao.savedResultsRoulette(rouletteId, randomNumberResult, color,  resultDate);		
+
+		return betDao.getAllBetsByIdRoulette(rouletteId);
 
 	}
 

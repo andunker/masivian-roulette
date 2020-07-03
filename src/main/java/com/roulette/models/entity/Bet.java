@@ -15,92 +15,92 @@ import javax.persistence.TemporalType;
 @Table(name = "bets")
 public class Bet implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    private Long roulette_id;
+	private Long rouletteId;
 
-    private Long user_id;
+	private Long userId;
 
-    private Long round_id;
+	private Long roundId;
 
-    private String bet_color;
+	private String betColor;
 
-    private Long bet_number;
+	private Long betNumber;
 
-    private Double bet_value;
+	private Double betValue;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date bet_date;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date betDate;
 
-    public Long getId() {
-        return id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public Date getBet_date() {
-        return bet_date;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setBet_date(Date bet_date) {
-        this.bet_date = bet_date;
-    }
+	public Long getRouletteId() {
+		return rouletteId;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setRouletteId(Long rouletteId) {
+		this.rouletteId = rouletteId;
+	}
 
-    public Long getRoulette_id() {
-        return roulette_id;
-    }
+	public Long getUserId() {
+		return userId;
+	}
 
-    public void setRoulette_id(Long roulette_id) {
-        this.roulette_id = roulette_id;
-    }
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
 
-    public Long getUser_id() {
-        return user_id;
-    }
+	public Long getRoundId() {
+		return roundId;
+	}
 
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
-    }
+	public void setRoundId(Long roundId) {
+		this.roundId = roundId;
+	}
 
-    public Long getRound_id() {
-        return round_id;
-    }
+	public String getBetColor() {
+		return betColor;
+	}
 
-    public void setRound_id(Long round_id) {
-        this.round_id = round_id;
-    }
+	public void setBetColor(String betColor) {
+		this.betColor = betColor;
+	}
 
-    public String getBet_color() {
-        return bet_color;
-    }
+	public Long getBetNumber() {
+		return betNumber;
+	}
 
-    public void setBet_color(String bet_color) {
-        this.bet_color = bet_color;
-    }
+	public void setBetNumber(Long betNumber) {
+		this.betNumber = betNumber;
+	}
 
-    public Long getBet_number() {
-        return bet_number;
-    }
+	public Double getBetValue() {
+		return betValue;
+	}
 
-    public void setBet_number(Long bet_number) {
-        this.bet_number = bet_number;
-    }
+	public void setBetValue(Double betValue) {
+		this.betValue = betValue;
+	}
 
-    public Double getBet_value() {
-        return bet_value;
-    }
+	public Date getBetDate() {
+		return betDate;
+	}
 
-    public void setBet_value(Double bet_value) {
-        this.bet_value = bet_value;
-    }
+	public void setBetDate(Date betDate) {
+		this.betDate = betDate;
+	}
 
-    /**
-     * 
-     */
-    private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 }

@@ -17,9 +17,9 @@ public class Round implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private Long roulette_id;
+	private Long rouletteId;
 
-	private Date create_at;
+	private Date createAt;
 
 	public Long getId() {
 		return id;
@@ -29,20 +29,20 @@ public class Round implements Serializable {
 		this.id = id;
 	}
 
-	public Long getRoulette_id() {
-		return roulette_id;
+	public Long getRouletteId() {
+		return rouletteId;
 	}
 
-	public void setRoulette_id(Long roulette_id) {
-		this.roulette_id = roulette_id;
+	public void setRouletteId(Long rouletteId) {
+		this.rouletteId = rouletteId;
 	}
 
-	public Date getCreate_at() {
-		return create_at;
+	public Date getCreateAt() {
+		return createAt;
 	}
 
-	public void setCreate_at(Date create_at) {
-		this.create_at = create_at;
+	public void setCreateAt(Date createAt) {
+		this.createAt = createAt;
 	}
 
 	/**

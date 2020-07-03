@@ -1,9 +1,8 @@
 package com.roulette.controllers;
 
-
-
 import java.util.List;
 
+import com.roulette.models.entity.Bet;
 import com.roulette.models.entity.Roulette;
 import com.roulette.models.service.IRouletteService;
 import com.roulette.view_models.ViewBetModel;
@@ -71,6 +70,19 @@ public class RouletteController {
 		}
 
 	}	
+
+	@GetMapping("roulette/close/{id}")
+	public List<Bet> closeRoulette(@PathVariable Long id) {
+
+		try {
+			
+			return rouletteService.closeRoulette(id);
+
+		} catch (Exception e) {
+			System.out.println(e);
+			return null;
+		}
+	}
 
 	@GetMapping("/roulette")
 	public List<Roulette> findAllRoulettes() {
