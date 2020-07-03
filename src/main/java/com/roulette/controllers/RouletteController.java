@@ -2,6 +2,9 @@ package com.roulette.controllers;
 
 
 
+import java.util.List;
+
+import com.roulette.models.entity.Roulette;
 import com.roulette.models.service.IRouletteService;
 import com.roulette.view_models.ViewBetModel;
 
@@ -69,4 +72,14 @@ public class RouletteController {
 
 	}	
 
+	@GetMapping("/roulette")
+	public List<Roulette> findAllRoulettes() {
+
+		try {
+			return rouletteService.findAllRoulettes();
+		} catch (Exception e) {
+			System.out.println(e);
+			return null;
+		}
+	}
 }

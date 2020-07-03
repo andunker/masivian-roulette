@@ -1,9 +1,11 @@
 package com.roulette.models.service;
 
 import java.util.Date;
+import java.util.List;
 
 import com.roulette.models.dao.IBetDao;
 import com.roulette.models.dao.IRouletteDao;
+import com.roulette.models.entity.Roulette;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -54,5 +56,12 @@ public class RouletteServiceImpl implements IRouletteService {
 		}
 
 	}
-    
+
+
+
+
+    @Override
+	public List<Roulette> findAllRoulettes() {
+		return rouletteDao.findAllRoulettes();
+	}
 }
