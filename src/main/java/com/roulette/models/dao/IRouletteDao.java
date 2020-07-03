@@ -1,4 +1,4 @@
-package com.roulette.dao;
+package com.roulette.models.dao;
 
 import java.util.Date;
 
@@ -18,5 +18,8 @@ public interface IRouletteDao extends JpaRepository<Roulette, Long> {
 	@Modifying
 	@Query(value = "update Roulettes set state = :state where id = :id", nativeQuery = true)
 	public int changeStateRoulette(@Param("id") Long id, @Param("state") String state);
+
+	@Query(value = "select * from Roulettes  where id = :id ", nativeQuery = true)
+	public Roulette findRoulettesById(@Param("id") Long id);
     
 }
